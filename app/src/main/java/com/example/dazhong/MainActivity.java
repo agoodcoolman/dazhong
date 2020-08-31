@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.http.HttpClientUtil;
+import com.model.SearchIndexPromptResult;
+import com.model.dianping.DPObject;
 
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
@@ -80,6 +82,10 @@ public class MainActivity extends AppCompatActivity {
                 byte[] bytes = response.body().bytes();
                 try {
                     byte[] decode = decode(bytes);
+                    if (decode.length <= 0 || decode[0] != 83) {
+                        Object dianping = DPObject.a(decode, 0, decode.length);
+                        ((DPObject)(dianping)).a(SearchIndexPromptResult.l)
+                    }
 
                 } catch (Exception e) {
                     e.printStackTrace();
