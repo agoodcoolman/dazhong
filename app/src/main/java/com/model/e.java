@@ -1,5 +1,8 @@
 package com.model;
 
+import com.dianping.archive.c;
+import com.dianping.archive.DPObject;
+
 import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -332,7 +335,7 @@ public class e {
                 stringBuffer.append("(EOF)");
             }
         } catch (Exception exception) {
-            b.a(exception);
+
             if (a())
                 stringBuffer.append("EOF");
         } finally {}

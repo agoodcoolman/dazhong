@@ -3,14 +3,12 @@ package com.example.dazhong;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 
 import com.http.HttpClientUtil;
 import com.model.SearchIndexPromptResult;
-import com.model.dianping.DPObject;
-
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
+import com.dianping.archive.DPObject;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -57,6 +55,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
+
+    }
+
+    public void opendazhong(View view) {
         HashMap<String, String> stringStringHashMap = new HashMap<>();
         stringStringHashMap.put("Accept-Encoding", "Accept-Encoding");
         stringStringHashMap.put("pragma-device", "00000000000000");
@@ -82,9 +86,12 @@ public class MainActivity extends AppCompatActivity {
                 byte[] bytes = response.body().bytes();
                 try {
                     byte[] decode = decode(bytes);
+                    Log.i("searchIndexPromptResult", decode.length +"" + decode[0]);
                     if (decode.length <= 0 || decode[0] != 83) {
                         Object dianping = DPObject.a(decode, 0, decode.length);
-                        SearchIndexPromptResult searchIndexPromptResult = ((DPObject)(dianping)).a(SearchIndexPromptResult.l);
+                        Log.i("searchIndexPromptResult", dianping.toString());
+                        SearchIndexPromptResult searchIndexPromptResult = (SearchIndexPromptResult)((DPObject)(dianping)).a(SearchIndexPromptResult.l);
+                        Log.i("searchIndexPromptResult", searchIndexPromptResult.toJson());
                     }
 
                 } catch (Exception e) {
@@ -92,10 +99,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
-
     }
-
     /**
      * 大众点评解密算法
      * @param bArr

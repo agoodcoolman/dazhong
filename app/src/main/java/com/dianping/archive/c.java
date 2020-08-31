@@ -1,4 +1,4 @@
-package com.model.dianping;
+package com.dianping.archive;
 
 public interface c<T> {
     T[] createArray(int i);

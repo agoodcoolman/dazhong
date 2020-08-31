@@ -1,5 +1,7 @@
-package com.model.dianping;
+package com.dianping.archive;
 
+
+import android.util.Log;
 
 import com.model.UIMsg;
 
@@ -162,7 +164,7 @@ public class e {
         }
     }
 
-    public <T> T a(com.model.c<T> cVar) throws a {
+    public <T> T a(c<T> cVar) throws a {
         byte b2 = this.a.get();
         if (b2 == 78) {
             return cVar.createInstance(0);
@@ -170,6 +172,7 @@ public class e {
         if (b2 == 79) {
             short s = (short)(this.a.getShort() & 65535);
             T createInstance = cVar.createInstance(s);
+            Log.i("dpobj",createInstance.toString());
             if (createInstance == null) {
                 throw new a("unable to create instance: " + Integer.toHexString(s));
             } else if (createInstance instanceof b) {
@@ -303,7 +306,7 @@ public class e {
         throw new a("unable to read array (string): " + this);
     }
 
-    public <T> T[] b(com.model.c<T> cVar) throws a {
+    public <T> T[] b(c<T> cVar) throws a {
         byte b2 = this.a.get();
         if (b2 == 78) {
             return cVar.createArray(0);

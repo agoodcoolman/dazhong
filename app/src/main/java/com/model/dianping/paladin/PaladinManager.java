@@ -9,9 +9,10 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
+
 public class PaladinManager {
 
-//    private static a k;
+    private static a k;
     private Context b;
     private volatile boolean c;
     private boolean d;
@@ -22,25 +23,25 @@ public class PaladinManager {
     private boolean i;
     private int j;
 
-//    private static final class a {
-//        /* access modifiers changed from: private */
-//        public static final PaladinManager a = new PaladinManager();
-//    }
-//
-//    public static PaladinManager a() {
-//        Object[] objArr = new Object[0];
-//
-//        return a.a;
-//    }
-//
-//    public PaladinManager() {
-//        Object[] objArr = new Object[0];
-//
-//        this.h = 1.0d;
-//        this.i = true;
-//        this.j = 1000;
-//    }
-//
+    private static final class a {
+        /* access modifiers changed from: private */
+        public static final PaladinManager a = new PaladinManager();
+    }
+
+    public static PaladinManager a() {
+        Object[] objArr = new Object[0];
+
+        return a.a;
+    }
+
+    public PaladinManager() {
+        Object[] objArr = new Object[0];
+
+        this.h = 1.0d;
+        this.i = true;
+        this.j = 1000;
+    }
+
 //    public void a(Context context, boolean z) {
 //        Object[] objArr = {context, new Byte(z ? (byte) 1 : 0)};
 //        if (context != null && !this.c) {
@@ -83,28 +84,24 @@ public class PaladinManager {
 //        }
 //    }
 //
-//    public void a(String str) {
-//        Object[] objArr = {str};
-//        ChangeQuickRedirect changeQuickRedirect = a;
-//        if (PatchProxy.isSupport(objArr, this, changeQuickRedirect, false, "f3aad2193495ff05642b2b45a302767c", 4611686018427387904L)) {
-//            PatchProxy.accessDispatch(objArr, this, changeQuickRedirect, false, "f3aad2193495ff05642b2b45a302767c");
-//            return;
-//        }
-//        try {
-//            if (this.i) {
-//                if (this.f == null) {
-//                    this.f = new ConcurrentLinkedQueue<>();
-//                }
-//                this.f.add(str);
-//                if (this.f.size() >= this.j) {
-//                    b();
-//                }
-//            }
-//        } catch (Throwable th) {
-//            com.dianping.v1.b.a(th);
-//        }
-//    }
-//
+    public void a(String str) {
+        Object[] objArr = {str};
+
+        try {
+            if (this.i) {
+                if (this.f == null) {
+                    this.f = new ConcurrentLinkedQueue<>();
+                }
+                this.f.add(str);
+                if (this.f.size() >= this.j) {
+                    b();
+                }
+            }
+        } catch (Throwable th) {
+
+        }
+    }
+
 //    public void a(int i2) {
 //        Object[] objArr = {new Integer(i2)};
 //        ChangeQuickRedirect changeQuickRedirect = a;
@@ -129,24 +126,20 @@ public class PaladinManager {
 //        }
 //    }
 //
-//    public void b() {
-//        Object[] objArr = new Object[0];
-//        ChangeQuickRedirect changeQuickRedirect = a;
-//        if (PatchProxy.isSupport(objArr, this, changeQuickRedirect, false, "d74e650d4d88fafd1224b771a6ca67e5", 4611686018427387904L)) {
-//            PatchProxy.accessDispatch(objArr, this, changeQuickRedirect, false, "d74e650d4d88fafd1224b771a6ca67e5");
-//            return;
-//        }
-//        ConcurrentLinkedQueue<String> concurrentLinkedQueue = this.f;
-//        if (concurrentLinkedQueue != null && concurrentLinkedQueue.size() > 0 && this.b != null) {
-//            ConcurrentLinkedQueue concurrentLinkedQueue2 = new ConcurrentLinkedQueue();
-//            concurrentLinkedQueue2.addAll(this.f);
-//            this.f.clear();
-//            if (this.e == null) {
-//                this.e = b.a("Paladin-Code");
-//            }
-//            this.e.execute(new f(this.b, concurrentLinkedQueue2));
-//        }
-//    }
+    public void b() {
+        Object[] objArr = new Object[0];
+
+        ConcurrentLinkedQueue<String> concurrentLinkedQueue = this.f;
+        if (concurrentLinkedQueue != null && concurrentLinkedQueue.size() > 0 && this.b != null) {
+            ConcurrentLinkedQueue concurrentLinkedQueue2 = new ConcurrentLinkedQueue();
+            concurrentLinkedQueue2.addAll(this.f);
+            this.f.clear();
+            if (this.e == null) {
+                this.e = com.model.sankuai.jarvis.b.a("Paladin-Code");
+            }
+            this.e.execute(new f(this.b, concurrentLinkedQueue2));
+        }
+    }
 //
 //    public void a(c cVar) {
 //        ScheduledExecutorService scheduledExecutorService;

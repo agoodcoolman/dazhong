@@ -1,4 +1,4 @@
-package com.model.dianping;
+package com.dianping.archive;
 
 import android.os.Build;
 

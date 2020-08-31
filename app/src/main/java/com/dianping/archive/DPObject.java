@@ -1,4 +1,4 @@
-package com.model.dianping;
+package com.dianping.archive;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -13,12 +13,7 @@ import java.nio.ByteOrder;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
 import java.util.NoSuchElementException;
-import androidx.annotation.NonNull;
-import com.model.dianping.libutil;
-import com.model.dianping.c;
 
 public class DPObject implements Parcelable, Iterable<Map.Entry<Integer, Object>> {
     public static final Parcelable.Creator<DPObject> CREATOR = new Parcelable.Creator<DPObject>() {
@@ -104,12 +99,15 @@ public class DPObject implements Parcelable, Iterable<Map.Entry<Integer, Object>
 
     static {
         boolean z;
-//        com.meituan.android.paladin.b.a("9aec1d254346bd8f2d7db40471b4fa2d");
+
         try {
+
             if (!libutil.a("dpobj", DPObject.class)) {
+                Log.i("dpobj", "need read dpobj");
                 // 如果读取失败了，在用这个默认的读取。
-//                System.loadLibrary(com.meituan.android.paladin.b.b("dpobj"));
+                System.loadLibrary(com.model.dianping.paladin.b.b("dpobj"));
             }
+            Log.i("dpobj", "not need read dpobj");
             z = a();
         } catch (Throwable th) {
 
@@ -334,7 +332,7 @@ public class DPObject implements Parcelable, Iterable<Map.Entry<Integer, Object>
         return -1;
     }
 
-    public static <T> T[] a(DPObject[] dPObjectArr, com.model.c<T> cVar) throws com.model.dianping.a {
+    public static <T> T[] a(DPObject[] dPObjectArr, com.dianping.archive.c<T> cVar) throws com.dianping.archive.a {
         T[] createArray = cVar.createArray(dPObjectArr.length);
         for (int i = 0; i < dPObjectArr.length; i++) {
             createArray[i] = dPObjectArr[i].a(cVar);
@@ -360,8 +358,8 @@ public class DPObject implements Parcelable, Iterable<Map.Entry<Integer, Object>
         return a(a(str));
     }
 
-    public <T> T a(com.model.c<T> cVar) throws com.model.dianping.a {
-        return new com.model.dianping.e(ByteBuffer.wrap(this.b, this.f2193c, this.d)).a(cVar);
+    public <T> T a(com.dianping.archive.c<T> cVar) throws com.dianping.archive.a {
+        return new com.dianping.archive.e(ByteBuffer.wrap(this.b, this.f2193c, this.d)).a(cVar);
     }
 
     public e c() {

@@ -3,20 +3,21 @@ package com.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.dianping.archive.c;
 import com.google.gson.annotations.SerializedName;
 
 public class SearchIndexPromptResult extends BasicModel {
     public static final Parcelable.Creator<SearchIndexPromptResult> CREATOR;
 
-    public static final c<SearchIndexPromptResult> l = new c<SearchIndexPromptResult>() {
+    public static final com.dianping.archive.c<SearchIndexPromptResult> l = new c<SearchIndexPromptResult>() {
         @Override
         public SearchIndexPromptResult[] createArray(int paramInt) {
-            return new SearchIndexPromptResult[0];
+            return new SearchIndexPromptResult[paramInt];
         }
 
         @Override
         public SearchIndexPromptResult createInstance(int paramInt) {
-            return null;
+            return (paramInt == 56072) ? new SearchIndexPromptResult() : new SearchIndexPromptResult(false);
         }
 
         public SearchIndexPromptResult[] a(int param1Int) {

@@ -2,6 +2,8 @@ package com.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+
+import com.dianping.archive.c;
 import com.google.gson.annotations.SerializedName;
 
 public class SearchIndexPromptItem extends BasicModel {
@@ -65,7 +67,7 @@ public class SearchIndexPromptItem extends BasicModel {
             return new SearchIndexPromptItem[i];
         }
     };
-    public static final c<SearchIndexPromptItem> l = new c<SearchIndexPromptItem>() {
+    public static final com.dianping.archive.c<SearchIndexPromptItem> l = new c<SearchIndexPromptItem>() {
         /* renamed from: a */
         public SearchIndexPromptItem[] createArray(int i) {
             return new SearchIndexPromptItem[i];
