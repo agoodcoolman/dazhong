@@ -334,7 +334,7 @@ public class DPObject implements Parcelable, Iterable<Map.Entry<Integer, Object>
         return -1;
     }
 
-    public static <T> T[] a(DPObject[] dPObjectArr, com.model.dianping.c<T> cVar) throws com.model.dianping.a {
+    public static <T> T[] a(DPObject[] dPObjectArr, com.model.c<T> cVar) throws com.model.dianping.a {
         T[] createArray = cVar.createArray(dPObjectArr.length);
         for (int i = 0; i < dPObjectArr.length; i++) {
             createArray[i] = dPObjectArr[i].a(cVar);
@@ -360,7 +360,7 @@ public class DPObject implements Parcelable, Iterable<Map.Entry<Integer, Object>
         return a(a(str));
     }
 
-    public <T> T a(com.model.dianping.c<T> cVar) throws com.model.dianping.a {
+    public <T> T a(com.model.c<T> cVar) throws com.model.dianping.a {
         return new com.model.dianping.e(ByteBuffer.wrap(this.b, this.f2193c, this.d)).a(cVar);
     }
 

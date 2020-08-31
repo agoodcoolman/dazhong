@@ -18,6 +18,16 @@ public class BasicModel implements Parcelable {
 
     static {
         CREATOR = new Parcelable.Creator<BasicModel>() {
+            @Override
+            public BasicModel createFromParcel(Parcel parcel) {
+                return null;
+            }
+
+            @Override
+            public BasicModel[] newArray(int i) {
+                return new BasicModel[0];
+            }
+
             public BasicModel a(Parcel param1Parcel) {
                 return new BasicModel(param1Parcel);
             }
@@ -46,7 +56,5 @@ public class BasicModel implements Parcelable {
 
     public void writeToParcel(Parcel paramParcel, int paramInt) {}
 
-    static {
-        b.a("e37a3b86c611eab61d13600cab314bca");
-    }
+
 }

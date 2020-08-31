@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
                     byte[] decode = decode(bytes);
                     if (decode.length <= 0 || decode[0] != 83) {
                         Object dianping = DPObject.a(decode, 0, decode.length);
-                        ((DPObject)(dianping)).a(SearchIndexPromptResult.l)
+                        SearchIndexPromptResult searchIndexPromptResult = ((DPObject)(dianping)).a(SearchIndexPromptResult.l);
                     }
 
                 } catch (Exception e) {
